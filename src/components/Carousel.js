@@ -21,14 +21,12 @@ export default function Carousel() {
                   setSearch(e.target.value);
                 }}
               />
-              {/* <button className="btn btn-outline-black text-white bg-dark "  type="submit">Search</button> */}
+    
             </div>
           </div>
           <div className="carousel-item active">
             <img
-              src="https://picsum.photos/200/300
-
-/random/?burger"
+              src="https://picsum.photos/200/300/?burger"
               className="d-block w-100"
               style={{ filter: "brightness(30%)" }}
               alt="..."
@@ -38,7 +36,7 @@ export default function Carousel() {
             <img
               src="https://picsum.photos/200/300
 
-/random/?momos"
+/?momos"
               className="d-block w-100"
               alt="..."
             />
@@ -47,7 +45,7 @@ export default function Carousel() {
             <img
               src="https://picsum.photos/200/300
 
-/random/?pizza"
+/?pizza"
               className="d-block w-100"
               alt="..."
             />
