@@ -44,7 +44,7 @@ const Carousel = ({ onSearch }) => {
         };
 
         fetchImages();
-    }, [search]);
+    }, [defaultImages]);
 
     const handleSearchChange = (e) => {
         const searchValue = e.target.value;

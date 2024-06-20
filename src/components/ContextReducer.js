@@ -2,6 +2,7 @@ import React, { createContext, useContext, useReducer } from "react";
 
 const CartStateContext = createContext();
 const CartDispatchContext = createContext();
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD":
@@ -16,34 +17,33 @@ const reducer = (state, action) => {
           img: action.img,
         },
       ];
+
     case "REMOVE":
-      let newArr = [...state];
-      newArr.splice(action.index, 1);
-      return newArr;
+      return state.filter((_, index) => index !== action.index);
 
     case "UPDATE":
-      let arr = [...state];
-      arr.find((food, index) => {
+      return state.map(food => {
         if (food.id === action.id) {
-          arr[index] = {
+          return {
             ...food,
             qty: parseInt(action.qty) + food.qty,
             price: action.price + food.price,
-          }
+          };
         }
-        
+        return food;
       });
-      return arr;
+
     case "DROP":
-      let empArray = [];
-      return empArray;
+      return [];
+
     default:
-      console.log("Error in Reducer");
+      throw new Error(`Unhandled action type: ${action.type}`);
   }
 };
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, []);
+
   return (
     <CartDispatchContext.Provider value={dispatch}>
       <CartStateContext.Provider value={state}>
