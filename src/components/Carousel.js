@@ -74,7 +74,7 @@ const Carousel = ({ onSearch }) => {
                     <input
                         className="form-control me-2"
                         type="search"
-                        placeholder="Search for food items"
+                        placeholder="Search"
                         aria-label="Search"
                         value={search}
                         onChange={handleSearchChange}
