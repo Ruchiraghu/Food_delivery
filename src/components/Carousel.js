@@ -1,12 +1,13 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 
 const Carousel = ({ onSearch }) => {
     const [images, setImages] = useState([]);
     const [search, setSearch] = useState('');
     const accessKey = '4iAVM4_2wAzr1yyEaLz4xkAXnyDgRR6LA-YhlH362qs'; // Replace with your Unsplash access key
-    const defaultImages = [
+
+    // Memoize defaultImages to prevent unnecessary recreations
+    const defaultImages = useMemo(() => [
         {
             url: "https://source.unsplash.com/random/900x700/?burger",
             alt: "Delicious burger"
@@ -19,7 +20,7 @@ const Carousel = ({ onSearch }) => {
             url: "https://source.unsplash.com/random/900x700/?pizza",
             alt: "Cheesy pizza"
         }
-    ];
+    ], []);
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -44,7 +45,7 @@ const Carousel = ({ onSearch }) => {
         };
 
         fetchImages();
-    }, [defaultImages]);
+    }, [defaultImages, search, accessKey]); // Include all dependencies here
 
     const handleSearchChange = (e) => {
         const searchValue = e.target.value;
