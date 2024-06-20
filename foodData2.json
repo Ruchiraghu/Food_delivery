@@ -144,5 +144,34 @@
             }
         ],
         "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer/Chicken/Mutton were added."
-    }
+    },
+    {
+        "CategoryName":"Fast food",
+        "name":"Burger",
+        "img":"https://images2.alphacoders.com/135/1353005.png",
+        "options":[
+            {"mini-burger": "50",
+                "large": "150"}
+        ],
+        "description":"Made using a patty of ground meat, usually beef, between two halves of a bun"
+    },
+    {
+        "CategoryName":"Fast food",
+        "name":"Veg sandwich",
+        "img":"https://images5.alphacoders.com/103/1032965.jpg",
+        "options":[
+            {"plain": "80",
+                "with cheese": "150"}
+        ],
+        "description":"Made using vegetables, green chutney, and cheese."
+    },
+    {
+        "CategoryName":"Fast food",
+        "name":"Fries",
+        "img":"https://images6.alphacoders.com/632/632951.jpg",
+        "options":[
+            {"half": "80",
+                "full": "160"}
+        ],
+        "description":"Made up of potato"}
 ]

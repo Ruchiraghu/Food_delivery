@@ -4,6 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 8000;
 const connectToDB = require("./db");
+
+
 connectToDB();
 mongoose.set('strictQuery', false);
 app.use(express.json());
@@ -12,6 +14,7 @@ app.use(cors({
 }
 
 ));
+
 
 app.use((req,res,next)=>{
 res.setHeader("Access-Control-Allow-Origin","http://localhost:3000");
@@ -25,6 +28,8 @@ next();
 app.get('/', (req, res) => {
     res.send('Hello, Express!');
 });
+
+
 app.use('/api/',require("./Routes/createUser"))
 app.use('/api/',require("./Routes/DisplayData"))
 app.use('/api/',require("./Routes/OrderData"))
