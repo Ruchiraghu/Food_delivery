@@ -14,7 +14,7 @@ app.use(express.json());
 
 // CORS configuration
 app.use(cors({
-    origin: 'http://localhost:3000', // Allow requests from this origin
+    origin: ['http://localhost:3000', 'https://667472c46a08c69e82eb4b3b--appforfood.netlify.app'], // Array of allowed origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow these HTTP methods
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'], // Allow these headers
 }));
