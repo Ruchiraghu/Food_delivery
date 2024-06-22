@@ -19,7 +19,7 @@ export default function Signup() {
       const res = await navLocation();
       const latitude = res.coords.latitude;
       const longitude = res.coords.longitude;
-      const response = await fetch("http://localhost:8000/api/getlocation", {
+      const response = await fetch("https://my-app-eqbq.onrender.com/api/getlocation", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
