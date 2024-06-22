@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const connectToDB = require("./db");
 const dotenv = require('dotenv');
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 // Connect to MongoDB
 connectToDB();
@@ -13,8 +13,7 @@ connectToDB();
 app.use(express.json());
 // CORS configuration
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://667472c46a08c69e82eb4b3b--appforfood.netlify.app','https://food-delivery-app-z6t3.onrender.com','https://my-app-eqbq.onrender.com'], // Array of allowed origins
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow these HTTP methods
+    origin: ['http://localhost:3000', 'https://667472c46a08c69e82eb4b3b--appforfood.netlify.app',`${process.env.REACT_APP_API_URL}`],
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'], // Allow these headers
 }));
 
