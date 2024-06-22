@@ -7,7 +7,7 @@ export default function MyOrder() {
 
   const fetchMyOrder = async () => {
     console.log(localStorage.getItem("userEmail"));
-    await fetch("https://my-app-eqbq.onrender.com/api/myOrderData", {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/myOrderData`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

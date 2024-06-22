@@ -15,7 +15,7 @@ const Home = () => {
     useEffect(() => {
         const loadData = async () => {
             try {
-                let response = await fetch("https://my-app-eqbq.onrender.com/api/foodData", {
+                let response = await fetch(`${process.env.REACT_APP_API_URL}/api/foodData`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

@@ -19,7 +19,7 @@ export default function Signup() {
       const res = await navLocation();
       const latitude = res.coords.latitude;
       const longitude = res.coords.longitude;
-      const response = await fetch("https://my-app-eqbq.onrender.com/api/getlocation", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/getlocation`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://my-app-eqbq.onrender.comapi/createuser", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/createuser`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
