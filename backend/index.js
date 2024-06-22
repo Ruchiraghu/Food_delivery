@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const connectToDB = require("./db");
 const dotenv = require('dotenv');
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 
 // Connect to MongoDB
 connectToDB();
