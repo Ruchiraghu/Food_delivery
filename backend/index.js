@@ -11,7 +11,6 @@ connectToDB();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
 // CORS configuration
 app.use(cors({
     origin: ['http://localhost:3000', 'https://667472c46a08c69e82eb4b3b--appforfood.netlify.app'], // Array of allowed origins
