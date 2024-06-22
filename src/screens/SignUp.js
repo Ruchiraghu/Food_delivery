@@ -38,7 +38,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8000/api/createuser", {
+      const response = await fetch("https://my-app-eqbq.onrender.comapi/createuser", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

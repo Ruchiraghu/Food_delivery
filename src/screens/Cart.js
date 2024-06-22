@@ -15,7 +15,7 @@ export default function Cart() {
 
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
-    let response = await fetch("http://localhost:8000/api/orderData", {
+    let response = await fetch("https://my-app-eqbq.onrender.comapi/orderData", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',
