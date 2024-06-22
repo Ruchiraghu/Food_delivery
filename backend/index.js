@@ -11,7 +11,7 @@ connectToDB();
 
 // Middleware
 app.use(express.json());
-
+app.use(cors());
 // CORS configuration
 app.use(cors({
     origin: ['http://localhost:3000', 'https://667472c46a08c69e82eb4b3b--appforfood.netlify.app'], // Array of allowed origins
@@ -25,9 +25,9 @@ app.get('/', (req, res) => {
 });
 
 // Example routes - adjust as per your actual routes
-app.use('/api/', require("./Routes/createUser"));
-app.use('/api/', require("./Routes/DisplayData"));
-app.use('/api/', require("./Routes/OrderData"));
+app.use('/api/', require("./functions/createUser"));
+app.use('/api/', require("./functions/DisplayData"));
+app.use('/api/', require("./functions/OrderData"));
 
 // Error handling middleware (if needed)
 app.use((err, req, res, next) => {
