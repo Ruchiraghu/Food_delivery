@@ -16,7 +16,7 @@ app.use(express.json());
 // Dynamic CORS configuration
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://appforfood.netlify.app/", // Change to your actual Netlify URL
+  "https://appforfood.netlify.app", 
   `${process.env.REACT_APP_API_URL}`
 ];
 
