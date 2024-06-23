@@ -57,6 +57,7 @@ const Carousel = ({ onSearch }) => {
         <div
             key={index}
             className={`carousel-item ${index === 0 ? 'active' : ''}`}
+            style={{maxHeight:'700px'}}
         >
             <img
                 src={image.url}
@@ -68,11 +69,12 @@ const Carousel = ({ onSearch }) => {
     ));
 
     return (
-        <div>
-            <div className="carousel-caption" style={{ zIndex: '10' }}>
-                <div className="d-flex justify-content-center">
+        <div className="carousel-container position-relative">
+            <div className="carousel-caption d-flex justify-content-center align-items-center">
+                <div className="search-container position-absolute top-50 start-50 translate-middle"
+                    style={{ zIndex: '10', width: '45%' }}>
                     <input
-                        className="form-control me-2"
+                        className="form-control"
                         type="search"
                         placeholder="Search"
                         aria-label="Search"
@@ -81,30 +83,15 @@ const Carousel = ({ onSearch }) => {
                     />
                 </div>
             </div>
-            <div
-                id="carouselExampleControls"
-                className="carousel slide carousel-fade"
-                data-bs-ride="carousel"
-                style={{ objectFit: 'contain !important' }}
-            >
+            <div className="carousel slide carousel-fade" data-bs-ride="carousel" style={{ objectFit: 'contain !important' }}>
                 <div className="carousel-inner">
                     {imageElements}
                 </div>
-                <button
-                    className="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev"
-                >
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
                 </button>
-                <button
-                    className="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next"
-                >
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>

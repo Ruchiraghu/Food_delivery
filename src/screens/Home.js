@@ -26,6 +26,8 @@ const Home = () => {
                 setFoodCategory(response.foodCategory);
             } catch (error) {
                 console.error("Error fetching the data: ", error);
+                console.log("API URL:", process.env.REACT_APP_API_URL);
+
             }
         };
 
