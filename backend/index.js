@@ -17,8 +17,8 @@ app.use(express.json());
 const allowedOrigins = [
   "http://localhost:3000",
  "https://my-app-1-koh3.onrender.com/",
-  "https://appforfood.netlify.app", 
-  `${process.env.REACT_APP_API_URL}`
+  "https://appforfood.netlify.app"
+  // , `${process.env.REACT_APP_API_URL}`
 ];
 
 app.use((req, res, next) => {
